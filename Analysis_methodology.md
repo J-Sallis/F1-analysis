@@ -1,10 +1,8 @@
 #### Purpose
 
+To compare and analyze the performance of Red Bull's two drivers in the last race of the F1 2022 season: Abu Dhabi.
 
 
-Make list of sources
 
-* https://medium.com/towards-formula-1-analysis
-    * Big shout out to Jasper for all the works he's done on bringing forward
-* 
-    * fastf1 github repo
+
+[References](references.bib)
