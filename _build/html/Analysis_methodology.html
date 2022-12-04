@@ -278,24 +278,35 @@ title="Print to PDF"
 <li><p>Race</p></li>
 <li><p>Conclusion</p></li>
 </ol>
+<p><img alt="smoke" src="_images/burnout.jpg" />
+<img alt="track" src="_images/track.jpg" /></p>
 <p>Part of the book will provide some background on F1 and how events such as Qualification work.</p>
+<p>Flow for each notebook will be:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">libraries</span>
+
+<span class="n">df</span> <span class="o">=</span> <span class="n">fastf1</span><span class="o">.</span><span class="n">access_data</span><span class="p">()</span>
+
+<span class="n">df</span><span class="o">.</span><span class="n">plot</span><span class="p">()</span>
+
+<span class="c1"># provide insights from data/visuals</span>
+
+</pre></div>
+</div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>In working through this project, I ran into issues with glue and Plotly figures. Doing some research, I found a <a class="reference external" href="https://github.com/executablebooks/jupyter-book/issues/1815%5D">function</a> that overcame this issue. Here’s the function:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>
-<span class="kn">import</span> <span class="nn">panel</span> <span class="k">as</span> <span class="nn">pn</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">panel</span> <span class="k">as</span> <span class="nn">pn</span>
 <span class="n">pn</span><span class="o">.</span><span class="n">extension</span><span class="p">(</span><span class="s1">&#39;plotly&#39;</span><span class="p">)</span>
 
 <span class="k">def</span> <span class="nf">gluePlotly</span><span class="p">(</span><span class="n">name</span><span class="p">,</span><span class="n">fig</span><span class="p">,</span><span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;Wrap Plotly object with Panel and glue()&quot;&quot;&quot;</span>
     <span class="k">return</span> <span class="n">glue</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">pn</span><span class="o">.</span><span class="n">pane</span><span class="o">.</span><span class="n">Plotly</span><span class="p">(</span><span class="n">fig</span><span class="p">,</span><span class="o">**</span><span class="n">kwargs</span><span class="p">),</span> <span class="n">display</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
-
 </pre></div>
 </div>
 </div>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
-<p>Max win’s the race and championship - he’s faster across the board</p>
+<p>As a Max fan - this analysis is by no means objective</p>
 </div>
 </section>
 

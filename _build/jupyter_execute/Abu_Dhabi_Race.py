@@ -1,14 +1,28 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# insert section for reference
 # # Race: Abu Dhabi
 # 
 # 
 # Using the grid starting order from qualification, the Sunday event is a race to the finish line. Race finish order is determined by the order in which cars complete the required number of laps. Podium finishes are for the top 3 drivers. All drivers in the top 10 are awarded points based on finish position. Starting at 25pts for first all the way down to 1pt for 10th. Each team is required to make at least one pit stop and use two different tire compounds.
 # 
+# ```python
+# def finish_race(driver,num_laps, race_laps):
+#     if num_laps == race_laps:
+#         return f"{driver} completed race"
+#     else:
+#         return f"{driver} did not complete race"
+# ```
 # 
-# create code blcoks/latex formuals for how points and podiums are assigned?
+# ```python
+# def get_podium(driver, finish_order):
+#     if driver is in sorted(finish_order)[:3]:
+#         return "Podium!"
+#     else:
+#         return "No podium"
+# 
+# ```
+# 
 # 
 # ![Quali](images/final_lap.jpg)
 # ![VER](images/track.png)
@@ -58,9 +72,7 @@ functions.gluePlotly("Lap-times",fig3)
 # 
 # All lap times for each driver
 # ```
-# Provide some comments on the above - re- 2 stop vs 1 stop strat
-# 
-# Perez getting caught behind Hamilton on lap 45
+# {numref}`lap_fig` Each dot represents each driver's lap time for each given lap. The large spikes upwards are pit stops. VER was on a one stop strategy while PER was on a two stop. Post second pit stop, Perez's times improved as he was on new tires. He would've caught LEC if he was not held up by Hamilton on lap 45.
 
 # In[5]:
 
@@ -72,20 +84,10 @@ fig4  = px.scatter(speed_trap, x='LapNumber',y='SpeedST',color='Driver').update_
 functions.gluePlotly("Speed-trap",fig4)
 
 
-# discuss how the values for perez could be higher due to DRS/slipstreams 
-# 
 # ```{glue:figure} Speed-trap
 # :figwidth: 800px
 # :name: "ST_fig"
 # 
 # Speed for each driver/lap taken at the Speed Trap
 # ```
-
-# #### References
-# 
-# * https://medium.com/towards-formula-1-analysis
-#     * Big shout out to Jasper for all the works he's done on sharing/teaching analysis
-# * https://github.com/theOehrly/Fast-F1
-#     * fastf1 github repo
-# * https://www.formula1.com/en/racing/2022/United_Arab_Emirates.html
-#     * F1 images
+# {numref}`ST_fig` Each dot represents each driver's speed each lap, recorded at the speed trap. Notice the variation in PER's speed throughout. As PER was fighting through the field, when he went to pass someone down the straight he had DRS. DRS is when a following car is trailing within 1s and is able to open the rear wing down the straights, resulting in higher top end speed. As VER was in first the entire race, he did not receive this benefit.
